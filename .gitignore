@@ -1,0 +1,117 @@
+# =========================
+# .NET / ASP.NET Core
+# =========================
+bin/
+obj/
+out/
+[Bb]uild/
+[Ll]og/
+publish/
+TestResults/
+*.exe
+*.dll
+*.log
+*.db
+*.db-shm
+*.db-wal
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+# =========================
+# .NET tooling
+# =========================
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.dbmdl
+*.jfm
+
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.vcxproj*
+*.vcproj*
+*.pdb
+*.idb
+*.opendb
+*.dbmdl
+*.bak
+*.backup
+*.mdf
+*.ldf
+
+# =========================
+# Rider / JetBrains IDE
+# =========================
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Rider caches
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/dictionaries
+.idea/**/shelf/
+
+# =========================
+# Cursor (AI Editor)
+# =========================
+.cursor/
+.cursorignore
+
+# =========================
+# Visual Studio Code
+# =========================
+.vscode/
+
+# =========================
+# Git / Version Control
+# =========================
+.git/
+.gitignore
+
+# =========================
+# Docker / Containers
+# =========================
+docker-compose.override.yml
+.dockerignore
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+**/*.env
+**/*.secret
+secrets.json
+secrets.*
+appsettings.*.local.json
+
+# =========================
+# Node (future UI / tooling)
+# =========================
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*~
+

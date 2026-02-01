@@ -1,0 +1,87 @@
+# =========================
+# Git & VCS
+# =========================
+.git
+.gitignore
+.gitattributes
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+**/*.env
+**/*.secret
+**/secrets.*
+**/secrets.dev.yaml
+**/values.dev.yaml
+
+# =========================
+# IDEs / Editors
+# =========================
+.vs
+.vscode
+.idea
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.DotSettings.user
+*.DotSettings
+.cursor/
+.cursorignore
+
+# =========================
+# Build outputs
+# =========================
+bin
+obj
+**/bin
+**/obj
+**/Debug
+**/Release
+
+# =========================
+# Docker / Compose
+# =========================
+docker-compose*
+Dockerfile*
+**/charts
+
+# =========================
+# Node / Frontend (future-proof)
+# =========================
+node_modules
+npm-debug.log
+yarn-error.log
+
+# =========================
+# OS / Temp files
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*~
+*\\*
+
+# =========================
+# Docs & meta
+# =========================
+LICENSE
+README.md
+
+
+# =========================
+# Pastas com backslash no nome (ex: bin\Debug) que quebram glob do MSBuild no Docker (dotnet/sdk#10172)
+# =========================
+*\\*
+**/charts
+**/docker-compose*
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md

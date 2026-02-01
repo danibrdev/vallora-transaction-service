@@ -1,0 +1,27 @@
+services:
+  transactionservice.api:
+    container_name: transactionservice-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      
+      # Connection string vem do ambiente (12-factor)
+      ConnectionStrings__Default: >
+        Host=postgres;
+        Port=5432;
+        Database=transactions;
+        Username=admin;
+        Password=infratest2025
+    
+    ports:
+      - "8080:8080"
+    networks:
+      - infra-net
+
+networks:
+  infra-net:
+    external: true
