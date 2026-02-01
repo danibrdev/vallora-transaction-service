@@ -66,21 +66,20 @@ Vallora.TransactionService
 
 ### Rodando localmente (sem Docker)
 
-1. Configure as variáveis de ambiente via **launchSettings.json** ou IDE:
+## 🚀 Executando o projeto localmente
 
-```json
-"environmentVariables": {
-  "ASPNETCORE_ENVIRONMENT": "Development",
-  "ConnectionStrings__PostgreSql": "Host=localhost;Port=5432;Database=transactions;Username=admin;Password=senha"
-}
+1. Clone o repositório
+2. Copie o arquivo `.env.example` para `.env`
+3. Ajuste as variáveis conforme seu ambiente
+4. Suba as dependências (Postgres, etc.)
+5. Execute a API
 
-2. Depois execute
-```
+```bash
 dotnet run
-
-3. API disponível em:
 ```
-http://localhost:5105
+
+Em ambiente de desenvolvimento, o schema do banco
+é criado automaticamente.
 
 ### Rodando com docker
 1. Crie o arquivo .env baseado no exemplo:
