@@ -66,7 +66,7 @@ Vallora.TransactionService
 
 ### Rodando localmente (sem Docker)
 
-## 🚀 Executando o projeto localmente
+## Executando o projeto localmente
 
 1. Clone o repositório
 2. Copie o arquivo `.env.example` para `.env`
@@ -145,6 +145,7 @@ Para aplicar as migrations no banco configurado:
 
 ```bash
 dotnet ef database update
+```
 
 > ⚠️ **Atenção:** certifique-se de que a variável  
 > `ConnectionStrings__PostgreSql` esteja configurada antes de executar o comando.
