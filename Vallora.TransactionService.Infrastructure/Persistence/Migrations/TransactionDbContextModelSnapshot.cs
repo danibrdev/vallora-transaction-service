@@ -11,7 +11,7 @@ using TransactionService.Infrastructure.Persistence.Context;
 
 namespace TransactionService.Infrastructure.Persistence.Migrations
 {
-    [DbContext(typeof(TransactionDbContext))]
+    [DbContext(typeof(PostgreSqlDbContext))]
     partial class TransactionDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

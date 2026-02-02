@@ -19,7 +19,7 @@ internal static class DbContextConfiguration
             throw new InvalidOperationException(
                 "ConnectionStrings:PostgreSql não configurada.");
 
-        services.AddDbContext<TransactionDbContext>(options =>
+        services.AddDbContext<PostgreSqlDbContext>(options =>
             options.UseNpgsql(connectionString));
 
         return services;

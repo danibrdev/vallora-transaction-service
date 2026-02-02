@@ -8,7 +8,7 @@ using TransactionService.Infrastructure.Persistence.Context;
 
 namespace TransactionService.Infrastructure.Persistence.Repositories;
 
-public sealed class TransactionRepository(TransactionDbContext context) : ITransactionRepository
+public sealed class TransactionRepository(PostgreSqlDbContext context) : ITransactionRepository
 {
     public async Task AddAsync(Transaction transaction, CancellationToken cancellationToken)
         => await context.Transactions.AddAsync(transaction, cancellationToken);

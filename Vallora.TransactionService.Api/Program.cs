@@ -41,5 +41,6 @@ if (app.Environment.IsDevelopment())
 }
 
 CreateTransactionEndpoint.Map(app);
+GetTransactionByIdEndpoint.Map(app);
 
 app.Run();

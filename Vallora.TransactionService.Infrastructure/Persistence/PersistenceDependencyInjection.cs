@@ -18,8 +18,9 @@ public static class PersistenceDependencyInjection
     {
         services.AddTransactionDbContext(configuration);
 
-        services.AddScoped<ITransactionRepository, TransactionRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<ITransactionRepository, TransactionRepository>();
+        services.AddScoped<ITransactionReadRepository, TransactionReadRepository>();
 
         return services;
     }

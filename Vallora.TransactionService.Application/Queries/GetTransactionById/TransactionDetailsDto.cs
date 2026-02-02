@@ -1,9 +1,12 @@
+#region
+
 using TransactionService.Domain.Aggregates.Transaction;
 
-namespace TransactionService.Application.DTOs;
+#endregion
 
-//TODO: Verificar se realmente preciso desse DTO
-public sealed record TransactionDto(
+namespace TransactionService.Application.Queries.GetTransactionById;
+
+public sealed record TransactionDetailsDto(
     Guid TransactionId,
     Guid PortfolioId,
     string Ticker,

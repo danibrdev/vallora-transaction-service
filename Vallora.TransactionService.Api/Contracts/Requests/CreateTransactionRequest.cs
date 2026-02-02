@@ -7,7 +7,7 @@ using TransactionService.Domain.Aggregates.Transaction;
 
 namespace TransactionService.Api.Contracts.Requests;
 
-public abstract record CreateTransactionRequest(
+public record CreateTransactionRequest(
     [Required] Guid PortfolioId,
     [Required] string Ticker,
     ETransactionType Type,

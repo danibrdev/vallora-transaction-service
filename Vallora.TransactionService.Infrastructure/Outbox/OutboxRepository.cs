@@ -7,7 +7,7 @@ using TransactionService.Infrastructure.Persistence.Context;
 
 namespace TransactionService.Infrastructure.Outbox;
 
-public sealed class OutboxRepository(TransactionDbContext context) : IOutbox
+public sealed class OutboxRepository(PostgreSqlDbContext context) : IOutbox
 {
     public async Task AddAsync(
         string type,

@@ -15,7 +15,7 @@ public static class PostgreSqlInitializer
         using var scope = serviceProvider.CreateScope();
 
         var context = scope.ServiceProvider
-            .GetRequiredService<TransactionDbContext>();
+            .GetRequiredService<PostgreSqlDbContext>();
 
         var environment = scope.ServiceProvider
             .GetRequiredService<IHostEnvironment>();

@@ -21,7 +21,7 @@ public sealed class OutboxPublisherWorker(IServiceScopeFactory scopeFactory) : B
         {
             using var scope = scopeFactory.CreateScope();
 
-            var context = scope.ServiceProvider.GetRequiredService<TransactionDbContext>();
+            var context = scope.ServiceProvider.GetRequiredService<PostgreSqlDbContext>();
             var publisher = scope.ServiceProvider.GetRequiredService<IEventPublisher>();
 
             await using var transaction =

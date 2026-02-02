@@ -7,7 +7,7 @@ using TransactionService.Infrastructure.Persistence.Context;
 
 namespace TransactionService.Infrastructure.Persistence;
 
-public class UnitOfWork(TransactionDbContext context) : IUnitOfWork
+public class UnitOfWork(PostgreSqlDbContext context) : IUnitOfWork
 {
     public async Task CommitAsync(CancellationToken cancellationToken = default)
         => await context.SaveChangesAsync(cancellationToken);

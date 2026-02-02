@@ -2,6 +2,7 @@
 
 using System.Net;
 using System.Text.Json;
+using Microsoft.AspNetCore.Hosting;
 using TransactionService.Api.Contracts.Responses;
 using TransactionService.Domain.Exceptions;
 
@@ -9,7 +10,10 @@ using TransactionService.Domain.Exceptions;
 
 namespace TransactionService.Api.Middleware;
 
-public sealed class ErrorHandlingMiddleware(RequestDelegate next)
+public sealed class ErrorHandlingMiddleware(
+    RequestDelegate next,
+    ILogger<ErrorHandlingMiddleware> logger,
+    IWebHostEnvironment environment)
 {
     public async Task InvokeAsync(HttpContext context)
     {
@@ -35,13 +39,19 @@ public sealed class ErrorHandlingMiddleware(RequestDelegate next)
                 ex.Message
             );
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            logger.LogError(ex, "Unhandled exception: {Message}", ex.Message);
+
+            var message = environment.IsDevelopment()
+                ? ex.ToString()
+                : "An unexpected error occurred.";
+
             await WriteErrorAsync(
                 context,
                 HttpStatusCode.InternalServerError,
                 "INTERNAL_ERROR",
-                "An unexpected error occurred."
+                message
             );
         }
     }
