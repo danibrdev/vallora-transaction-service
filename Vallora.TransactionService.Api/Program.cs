@@ -1,6 +1,6 @@
 #region
 
-using TransactionService.Api.Endpoints.Transactions;
+using TransactionService.Api.Endpoints;
 using TransactionService.Api.Middleware;
 using TransactionService.Application;
 using TransactionService.Infrastructure;
@@ -10,6 +10,7 @@ using TransactionService.Infrastructure.Persistence.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// carregar todos os jsons (incluindo o local)
 builder.Configuration
     .AddJsonFile("appsettings.json", optional: false)
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
@@ -40,7 +41,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-CreateTransactionEndpoint.Map(app);
-GetTransactionByIdEndpoint.Map(app);
+app.MapTransactionsEndpoints();
 
 app.Run();
