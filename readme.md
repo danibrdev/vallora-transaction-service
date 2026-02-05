@@ -37,11 +37,13 @@ Este serviço segue princípios de **Clean Architecture**, **DDD** e **12-Factor
 ---
 
 ## Arquitetura
+```
 Vallora.TransactionService
 ├── Api              → Minimal APIs (entrada)
 ├── Application      → Casos de uso, comandos, eventos
 ├── Domain           → Entidades, Value Objects, regras
 └── Infrastructure   → Persistência, Kafka, Outbox, EF
+```
 
 ---
 
